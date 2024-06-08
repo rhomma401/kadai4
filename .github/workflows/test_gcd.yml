@@ -1,0 +1,17 @@
+name: Test gcd.sh
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run gcd tests
+      run: |
+        chmod +x test_gcd.sh
+        ./test_gcd.sh
+
